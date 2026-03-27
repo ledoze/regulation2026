@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>BTSMV RÉGULATION 2022:V1.2</title>
+    <link rel="stylesheet" href="/static/index.css" />
+  </head>
+  <body>
+      <main class="grid"> 
+      <div class="container2">
+           <textarea id="text-identite" name="identite"  cols="15" rows="1">NOM PRÉNOM</textarea>       
+           <button id="button-valider"  name="valider">VALIDER</button> 
+           <input type='file' accept='text/plain' onchange='openFile(event)' id="openFile">           
+           <div id='output'>   ....       </div> 
+           <textarea id="textData" rows="1" placeholder="Warning to save"></textarea>
+           
+      </div>      
+       <div class="container">            
+          <div class="item">          
+              <div class= "process">
+                    <div class="afficheconsigne">
+                      <label for="slider-consigne">Consigne</label>
+                      <input style="accent-color: red" type="range" id="slider-consigne"  name="sliderconsigne" min="0"max="100" value="90" step="10" />
+                      <textarea id="text-consigne" name="consigne"  cols="15" rows="2"></textarea>
+                      <button id="button-bf" class="button1" name="bf">BOUCLE-FERMÉE</button>
+                      <button id="button-saturation" class="button1"  name="saturation">SATURATION</button>
+                      <label for="slider-Kp">K_proportionnel</label>
+                      <input style="accent-color: red" type="range" id="slider-Kp" name="sliderKp" min="0"max="100" value="1" step="1" />
+                      <label for="slider-Ki">K_intégral</label>
+                      <input style="accent-color: red" type="range" id="slider-Ki" name="sliderKi" min="0"max="100" value="0" step="1" />
+                      <label for="slider-Kd">K_dérivée</label>
+                      <input style="accent-color: red" type="range" id="slider-Kd" name="sliderKd" min="0"max="100" value="0" step="1" />                      
+                    </div>
+                    <div class="vertical">
+                        <div class="boutonperturb">
+                            <button id="button-perturbplus" class="button3" name="perturplus">PERTURBATION +</button>           
+                            <button id="button-perturbmoins" class="button3" name="perturmoins">PERTURBATION --</button>                        
+                        </div>
+                         <div>
+                             <canvas id="canvas-boucle" class="schemaboucle" width="600px" ></canvas>
+                         </div>                      
+                         <div>
+                             <canvas id="canvas" class="scope" width="600px" height="400px"></canvas>
+                         </div>
+                    </div>                    
+                    <div class="afficheprocess">
+                       <label for="slider-gs">GainStatique</label>  
+                      <input style="accent-color: blue" type="range" id="slider-gs" name="slidergs" min="0"max="100" value="1" step="1" />                      
+                      <label for="slider-tau">CstTemps</label>                       
+                      <input style="accent-color: blue" type="range" id="slider-tau" name="slidertau" min="0"max="10" value="2" step="1" />
+                      <label for="text-mesure">Mesure</label>
+                      <textarea id="text-mesure"  name="mesure" cols="15" rows="2"></textarea>
+                      <button id="button-bo" class="button2" name="bo">BOUCLE-OUVERTE</button>                      
+                      <div class="boutonscope">
+                        <div>
+                        <button id="button-acquisition" class="button4" name="acquisition">ACQUISITION</button> 
+                        </div>
+                        <div>
+                        <button id="button-simul" class="button4" name="simul">SIMULATION</button> 
+                        </div>
+                        <div>
+                            <button id="button-pause" class="button4"  name="pause">PAUSE</button>
+                            <button id="button-debut" class="button4" name="debut">DEBUT</button>
+                        </div>                        
+                        <div>
+                        <button id="button-timeplus" class="button4" name="timeplus">AXE X+</button> 
+                        <button id="button-timemoins" class="button4" name="timemoins">AXE X-</button> 
+                        </div>
+                        <div>
+                        <button id="button-yplus" class="button4" name="yplus">AXE Y+</button> 
+                        <button id="button-ymoins" class="button4" name="ymoins">AXE Y-</button> 
+                        </div>                        
+                        
+                        <div>
+                        <button id="button-save" class="button4"  name="save">SAVE</button>  
+                        </div>
+                      </div>
+                    </div>                    
+              </div>                           
+          </div>         
+       </div>
+  </main>  
+    <script src="/static/index.js" defer></script>
+    <link href="index.css" rel="stylesheet"> 
+  </body>
+</html>
